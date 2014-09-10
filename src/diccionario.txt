@@ -1,3 +1,4 @@
+
 (come,eat)
 (frijoles,beans)
 (parcial,test)

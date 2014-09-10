@@ -25,44 +25,70 @@ public class Hoja7 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int numero;
-        boolean inicio = true;
-        String sCadenaSinBlancos = "";
+
+
         // TODO code application logic here
         File f = new File( "src/diccionario.txt" );
         BufferedReader entrada;
         try {
         entrada = new BufferedReader( new FileReader( f ) );
         String linea;
+        
+        ArrayList<ArrayList> todoDiccionario = new ArrayList();
+       
+        
         linea = entrada.readLine();
-        BinaryTree<String> diccionarioArbol;
+        
+       
         while(entrada.ready()){
             linea = entrada.readLine();
-            if(inicio){
-                diccionarioArbol = new BinaryTree<String>(linea);
-            }else
-            {
-                diccionarioArbol = new BinaryTree<String>(linea,diccionarioArbol);
-            }
-            System.out.println(linea);
-            linea = linea.substring(0);
-            System.out.println(linea);
-            numero = linea.length(); 
-            System.out.println(numero); 
-            for (int x=0; x < linea.length(); x++) {
-                if (linea.charAt(x) != ' '){
-                    sCadenaSinBlancos += linea.charAt(x);
-                }
-            }
-            System.out.println(sCadenaSinBlancos);
-        }*/
+          
+            String vector[] = linea.split(",");
+            ArrayList separado = new ArrayList();
+            separado.add(0, vector[0].substring(1));
+            separado.add(1, vector[1].substring(0,vector[1].length()-1));
+
+            
+            
+           
+            todoDiccionario.add(separado);
+           
+           
+            
+        }
+        System.out.println(todoDiccionario.size());
+        System.out.println(todoDiccionario);
+        BinaryTree<ArrayList> a1 = new BinaryTree<>(todoDiccionario.get(7)) ;
+        BinaryTree<ArrayList> a2 = new BinaryTree<>(todoDiccionario.get(6),a1,null);
+        BinaryTree<ArrayList> a3 = new BinaryTree<>(todoDiccionario.get(5)) ;
+        BinaryTree<ArrayList> a4 = new BinaryTree<>(todoDiccionario.get(4),a2,a3); 
+        BinaryTree<ArrayList> a5 = new BinaryTree<>(todoDiccionario.get(3)) ;
+        BinaryTree<ArrayList> a6 = new BinaryTree<>(todoDiccionario.get(2)) ;
+        BinaryTree<ArrayList> a7 = new BinaryTree<>(todoDiccionario.get(1),a5,a6) ;
+        BinaryTree<ArrayList> afinal = new BinaryTree<>(todoDiccionario.get(0),a4,a7);
+        
+        
+        
+        
+        
+        
+        System.out.println(afinal);   
+        
+        
+        List<ArrayList> inList = new LinkedList<>();
+		afinal.inorder(inList);
+		System.out.println("INORDER" + inList);
+        /* List<ArrayList> imprimirArbol = new LinkedList<ArrayList>();
+        diccionarioArbol.inorder(imprimirArbol);
+           System.out.println(imprimirArbol);
+        System.out.println(diccionarioArbol);*/
         }catch (IOException e) {
         e.printStackTrace();
         }
         
-        // Create a tree by building it up
+        /*/Create a tree by building it up
 
-		BinaryTree<String> leftChild = new BinaryTree<String>("bear",
+		/BinaryTree<String> leftChild = new BinaryTree<String>("bear",
 				new BinaryTree<String>("ant"), new BinaryTree<String>("cat"));
 		BinaryTree<String> tree= new BinaryTree<String>("cow", leftChild,
 				new BinaryTree<String>("dog"));
@@ -102,8 +128,11 @@ public class Hoja7 {
 		System.out.println("Size of tree2 = " + tree2.size());
 		System.out.println("Height of tree2 = " + tree2.height());
 		System.out.println("Fringe of tree2 =" + tree2.fringe());
-		System.out.println("tree and tree2 are equal? " + tree.equals(tree2));
+		System.out.println("tree and tree2 are equal? " + tree.equals(tree2));*/
+                
     }
+    
+     
     
 }
 
