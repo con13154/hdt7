@@ -67,14 +67,8 @@ public class Hoja7 {
         BinaryTree<ArrayList> a7 = new BinaryTree<>(todoDiccionario.get(1),a5,a6) ;
         BinaryTree<ArrayList> afinal = new BinaryTree<>(todoDiccionario.get(0),a4,a7);
         
-        
-        
-        
-        
-        
         System.out.println(afinal);   
-        
-        
+      
         List<ArrayList> inList = new LinkedList<>();
 		afinal.inorder(inList);
 		System.out.println("INORDER" + inList);
