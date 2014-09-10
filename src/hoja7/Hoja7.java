@@ -19,6 +19,7 @@ import java.util.*;
  * @author konoha
  */
 public class Hoja7 {
+    
 
     /**
      * @param args the command line arguments
@@ -75,10 +76,42 @@ public class Hoja7 {
         List<ArrayList> inList = new LinkedList<>();
 		afinal.inorder(inList);
 		System.out.println("INORDER" + inList);
-                
+        
+        //ArrayList lista = [];
+        //inList.toArray();
+        Iterator i = inList.iterator();
+        while(i.hasNext()){
+            System.out.println("Elemento" + i.next());
+        }
+        
+        String sCadenaSinBlancos = "";
+        File f1 = new File( "src/texto.txt" );
+        BufferedReader entrada1;
+        try {
+            entrada1 = new BufferedReader( new FileReader( f1 ) );
+            String linea1;
+            while(entrada1.ready()){
+                linea1 = entrada1.readLine();
+                System.out.println(linea1);
+                for (int x=0; x < linea1.length(); x++) {
+                    if (linea1.charAt(x) != ' '){
+                        sCadenaSinBlancos += linea1.charAt(x);
+                        i = inList.iterator();
+                        while(i.hasNext()){
+                            System.out.println(i.next());
+                            if(i.next().equals(sCadenaSinBlancos)){
+                                System.out.println("Son iguales");
+                            }    
+                        }
+                    }
+                }
+            System.out.println(sCadenaSinBlancos);
+            }
+        }catch (IOException e) {
+        e.printStackTrace();
+        }        
     }
     
-
     
 }
 
