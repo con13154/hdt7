@@ -4,6 +4,15 @@
  * and open the template in the editor.
  */
 
+/*
+Universidad del Valle de Guatemala 
+Autores: Erick de Mata, 13648
+         Luis Orellana 13140
+         Isa Contreras 13154
+Archivo: Association.java
+*/ 
+
+
 package hoja7;
 
 /**
