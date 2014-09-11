@@ -63,14 +63,11 @@ public class Hoja7 {
         System.out.println(todoDiccionario.size());
         System.out.println(todoDiccionario);
         BinaryTree diccionario = new BinaryTree();
-        diccionario.addNode(todoDiccionario.get(7).get(0).toString(), todoDiccionario.get(7).get(1).toString());
-        diccionario.addNode(todoDiccionario.get(6).get(0).toString(), todoDiccionario.get(6).get(1).toString());
-        diccionario.addNode(todoDiccionario.get(5).get(0).toString(), todoDiccionario.get(5).get(1).toString());
-        diccionario.addNode(todoDiccionario.get(4).get(0).toString(), todoDiccionario.get(4).get(1).toString());
-        diccionario.addNode(todoDiccionario.get(3).get(0).toString(), todoDiccionario.get(3).get(1).toString());
-        diccionario.addNode(todoDiccionario.get(2).get(0).toString(), todoDiccionario.get(2).get(1).toString());
-        diccionario.addNode(todoDiccionario.get(1).get(0).toString(), todoDiccionario.get(1).get(1).toString());
-        diccionario.addNode(todoDiccionario.get(0).get(0).toString(), todoDiccionario.get(0).get(1).toString());
+        
+        for (int x = 0; x < todoDiccionario.size(); x++){
+            diccionario.addNode(todoDiccionario.get(x).get(0).toString(), todoDiccionario.get(x).get(1).toString());
+        }
+        
         
         
         System.out.println(diccionario);   
