@@ -2,11 +2,11 @@
 package hoja7;
 import java.util.*;
 
-public class BinaryTree {
+public class BinaryTree<E> {
 
 	Node root;
 
-	public void addNode(String key, String name) {
+	public void addNode(E key, E name) {
 
 		// Create a new Node and initialize it
 
@@ -39,7 +39,7 @@ public class BinaryTree {
 				// Check if the new node should go on
 				// the left side of the parent node
 
-				if (key.compareTo(focusNode.key) < 0) {
+				if (key.toString().compareTo(focusNode.key.toString()) < 0) {
 
 					// Switch focus to the left child
 
@@ -128,7 +128,7 @@ public class BinaryTree {
 
 	}
 
-	public Node findNode(String key) {
+	public Node findNode(E key) {
 
 		// Start at the top of the tree
 
@@ -137,11 +137,11 @@ public class BinaryTree {
 		// While we haven't found the Node
 		// keep looking
 
-		while (!focusNode.key.equalsIgnoreCase(key)) {
+		while (!focusNode.key.toString().equalsIgnoreCase(key.toString())) {
 
 			// If we should search to the left
 
-			if (key.compareTo(focusNode.key) < 0) {
+			if (key.toString().compareTo(focusNode.key.toString()) < 0) {
 
 				// Shift the focus Node to the left child
 
@@ -175,11 +175,11 @@ public class BinaryTree {
 		// While we haven't found the Node
 		// keep looking
 
-		while (!focusNode.key.equalsIgnoreCase(key)) {
+		while (!focusNode.key.toString().equalsIgnoreCase(key)) {
 
 			// If we should search to the left
 
-			if (key.compareTo(focusNode.key) < 0) {
+			if (key.compareTo(focusNode.key.toString()) < 0) {
 
 				// Shift the focus Node to the left child
 
@@ -200,52 +200,21 @@ public class BinaryTree {
 
 		}
 
-		return focusNode.name;
+		return focusNode.name.toString();
 
 	}
 
-public static void main(String[] args) {
-
-		BinaryTree theTree = new BinaryTree();
-
-		theTree.addNode("h", "Boss");
-
-		theTree.addNode("b", "Vice President");
-
-		theTree.addNode("w", "Office Manager");
-
-		theTree.addNode("z", "Secretary");
-
-		theTree.addNode("a", "Sales Manager");
-
-		theTree.addNode("p", "Salesman 1");
-
-		// Different ways to traverse binary trees
-
-		// theTree.inOrderTraverseTree(theTree.root);
-
-		// theTree.preorderTraverseTree(theTree.root);
-
-		// theTree.postOrderTraverseTree(theTree.root);
-
-		// Find the node with key 75
-
-		System.out.println("\nNode with the key 75");
-
-		System.out.println(theTree.findNode("p"));
-
-}
 }
 
-class Node {
+class Node<G> {
 
-	String key;
-	String name;
+	G key;
+	G name;
 
 	Node leftChild;
 	Node rightChild;
 
-	Node(String key, String name) {
+	Node(G key, G name) {
             
 		this.key = key;
 		this.name = name;

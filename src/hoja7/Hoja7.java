@@ -30,7 +30,7 @@ public class Hoja7 {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        ArrayList<ArrayList> todoDiccionario = new ArrayList();
+        ArrayList<Association> todoDiccionario = new ArrayList();
         // TODO code application logic here
         File f = new File( "src/diccionario.txt" );
         BufferedReader entrada;
@@ -48,9 +48,8 @@ public class Hoja7 {
                 linea = entrada.readLine();
 
                 String vector[] = linea.split(",");
-                ArrayList separado = new ArrayList();
-                separado.add(0, vector[0].substring(1));
-                separado.add(1, vector[1].substring(0,vector[1].length()-1));
+                Association separado = new Association();
+                separado.addAsociation( vector[0].substring(1), vector[1].substring(0,vector[1].length()-1));
 
                 todoDiccionario.add(separado);
 
@@ -65,13 +64,16 @@ public class Hoja7 {
         BinaryTree diccionario = new BinaryTree();
         
         for (int x = 0; x < todoDiccionario.size(); x++){
-            diccionario.addNode(todoDiccionario.get(x).get(0).toString(), todoDiccionario.get(x).get(1).toString());
+            diccionario.addNode(todoDiccionario.get(x).getKey().toString(), todoDiccionario.get(x).getValor().toString());
         }
         
         
         
-        System.out.println(diccionario);   
-        System.out.println(diccionario.findName("eat")); 
+        System.out.println(diccionario);
+        
+        //Se trabaja el arbol binario de manera "in order"
+        diccionario.inOrderTraverseTree(diccionario.root);
+        
         
         //Yooo
         int contador = todoDiccionario.size();
@@ -84,7 +86,6 @@ public class Hoja7 {
             System.out.println("Elemento" + i.next());
         }
         
-        String sCadenaSinBlancos = "";
         File f1 = new File( "src/texto.txt" );
         BufferedReader entrada1;
         try {
