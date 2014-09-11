@@ -1,7 +1,7 @@
 
 (eats,come)
 (beans,frijoles)
-(test,paricla)
+(test,parcial)
 (three,tres)
 (points,puntos)
 (calculous,calculo)

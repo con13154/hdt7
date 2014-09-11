@@ -1,8 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+Universidad del Valle de Guatemala 
+Autores: Erick de Mata, 13648
+         Luis Orellana 13140
+         Isa Contreras 13154
+Archivo: Hoja7.java
+Main hoja de trabajo 7, realiza la funcion de un diccionario ingles/espa;ol
+*/
 
 package hoja7;
 

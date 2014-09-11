@@ -1,3 +1,13 @@
+/*
+Universidad del Valle de Guatemala 
+Autores: Erick de Mata, 13648
+         Luis Orellana 13140
+         Isa Contreras 13154
+Archivo: BinaryTree.java
+
+Se utilizo como referencia codigo obtenido de http://www.newthinktank.com/2013/03/binary-tree-in-java/. [Visitado 09/09/2014]
+*/
+
 
 package hoja7;
 import java.util.*;
@@ -225,10 +235,7 @@ class Node<G> {
 
 		return name + " has the key " + key;
 
-		/*
-		 * return name + " has the key " + key + "\nLeft Child: " + leftChild +
-		 * "\nRight Child: " + rightChild + "\n";
-		 */
+		
 
 	}
 
