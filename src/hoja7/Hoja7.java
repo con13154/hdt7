@@ -71,7 +71,66 @@ public class Hoja7 {
         
         
         System.out.println(diccionario);   
-        System.out.println(diccionario.findName("come"));
+        System.out.println(diccionario.findName("eat")); 
+        
+        //Yooo
+        int contador = todoDiccionario.size();
+        System.out.println(contador); 
+       
+       
+        
+        Iterator i = todoDiccionario.iterator();
+        while(i.hasNext()){
+            System.out.println("Elemento" + i.next());
+        }
+        
+        String sCadenaSinBlancos = "";
+        File f1 = new File( "src/texto.txt" );
+        BufferedReader entrada1;
+        try {
+            entrada1 = new BufferedReader( new FileReader( f1 ) );
+            String linea1;
+            linea1 = entrada1.readLine();
+            System.out.println(linea1);
+            /*for (int x=0; x < linea1.length(); x++) {
+                if (linea1.charAt(x) = ' '){
+                    
+                    sCadenaSinBlancos += linea1.charAt(x);
+                    contador1 = contador2
+                }
+            }
+            System.out.println(sCadenaSinBlancos);*/
+            String palabra = linea1.substring(0,3);
+            System.out.println(palabra);
+            String palabra1 = linea1.substring(4,8);
+            System.out.println(palabra1);
+            String palabra2 = linea1.substring(9,17);
+            System.out.println(palabra2);
+            String palabra3 = linea1.substring(18,26);
+            System.out.println(palabra3);
+            String palabra4 = linea1.substring(27,34);
+            System.out.println(palabra4);
+            String palabra5 = linea1.substring(35,42);
+            System.out.println(palabra5);
+            String palabra6 = linea1.substring(43,47);
+            System.out.println(palabra6);
+            String palabra7 = linea1.substring(48,64);
+            System.out.println(palabra7);
+            String palabra8 = linea1.substring(66,68);
+            System.out.println(palabra8);
+            String palabra9 = linea1.substring(69,76);
+            System.out.println(palabra9);
+            String palabra10 = linea1.substring(77,81);
+            System.out.println(palabra10);
+            String palabra11 = linea1.substring(82,88);
+            System.out.println(palabra11);
+            String palabra12 = linea1.substring(89,95);
+            System.out.println(palabra12);
+            
+        }catch (IOException e) {
+        e.printStackTrace();
+        }   
+        
          
     }
     
