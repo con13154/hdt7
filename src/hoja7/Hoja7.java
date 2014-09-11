@@ -75,9 +75,8 @@ public class Hoja7 {
         diccionario.inOrderTraverseTree(diccionario.root);
         
         
-        //Yooo
+        //Mide el tamaño del arbol 
         int contador = todoDiccionario.size();
-        
         System.out.println(contador); 
        
 
@@ -87,21 +86,25 @@ public class Hoja7 {
             entrada1 = new BufferedReader( new FileReader( f1 ) );
             String linea1;
             linea1 = entrada1.readLine();
+            linea1 = linea1.toLowerCase();
             System.out.println(linea1);
-            /*for (int x=0; x < linea1.length(); x++) {
-                if (linea1.charAt(x) = ' '){
-                    
-                    sCadenaSinBlancos += linea1.charAt(x);
-                    contador1 = contador2
-                }
-            }
-            System.out.println(sCadenaSinBlancos);*/
+            
             
             String[] palabras = linea1.split(" ");
-            
+            String cadena = "";
             for (int x =0; x < palabras.length; x++){
                 System.out.println(palabras[x]);
+                String traducir = diccionario.findName(palabras[x].toString());
+                System.out.println(traducir);
+                if(palabras[x].equals("eats")|| palabras[x].equals("beans")|| palabras[x].equals("test") || palabras[x].equals("three") || palabras[x].equals("points")
+                        || palabras[x].equals("calculous") || palabras[x].equals("studies") || palabras[x].equals("the")){
+                    cadena += traducir + " ";
+                }else{
+                    cadena += " *"+palabras[x]+"* ";
+                }
             }
+            
+            System.out.println(cadena);
             
             
         }catch (IOException e) {
