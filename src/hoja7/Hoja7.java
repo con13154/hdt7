@@ -62,54 +62,20 @@ public class Hoja7 {
         
         System.out.println(todoDiccionario.size());
         System.out.println(todoDiccionario);
-        BinaryTree<ArrayList> a1 = new BinaryTree<>(todoDiccionario.get(7)) ;
-        BinaryTree<ArrayList> a2 = new BinaryTree<>(todoDiccionario.get(6),a1,null);
-        BinaryTree<ArrayList> a3 = new BinaryTree<>(todoDiccionario.get(5)) ;
-        BinaryTree<ArrayList> a4 = new BinaryTree<>(todoDiccionario.get(4),a2,a3); 
-        BinaryTree<ArrayList> a5 = new BinaryTree<>(todoDiccionario.get(3)) ;
-        BinaryTree<ArrayList> a6 = new BinaryTree<>(todoDiccionario.get(2)) ;
-        BinaryTree<ArrayList> a7 = new BinaryTree<>(todoDiccionario.get(1),a5,a6) ;
-        BinaryTree<ArrayList> afinal = new BinaryTree<>(todoDiccionario.get(0),a4,a7);
+        BinaryTree diccionario = new BinaryTree();
+        diccionario.addNode(todoDiccionario.get(7).get(0).toString(), todoDiccionario.get(7).get(1).toString());
+        diccionario.addNode(todoDiccionario.get(6).get(0).toString(), todoDiccionario.get(6).get(1).toString());
+        diccionario.addNode(todoDiccionario.get(5).get(0).toString(), todoDiccionario.get(5).get(1).toString());
+        diccionario.addNode(todoDiccionario.get(4).get(0).toString(), todoDiccionario.get(4).get(1).toString());
+        diccionario.addNode(todoDiccionario.get(3).get(0).toString(), todoDiccionario.get(3).get(1).toString());
+        diccionario.addNode(todoDiccionario.get(2).get(0).toString(), todoDiccionario.get(2).get(1).toString());
+        diccionario.addNode(todoDiccionario.get(1).get(0).toString(), todoDiccionario.get(1).get(1).toString());
+        diccionario.addNode(todoDiccionario.get(0).get(0).toString(), todoDiccionario.get(0).get(1).toString());
         
-        System.out.println(afinal);   
-      
-        List<ArrayList> inList = new LinkedList<>();
-		afinal.inorder(inList);
-		System.out.println("INORDER" + inList);
         
-        //ArrayList lista = [];
-        //inList.toArray();
-        Iterator i = inList.iterator();
-        while(i.hasNext()){
-            System.out.println("Elemento" + i.next());
-        }
-        
-        String sCadenaSinBlancos = "";
-        File f1 = new File( "src/texto.txt" );
-        BufferedReader entrada1;
-        try {
-            entrada1 = new BufferedReader( new FileReader( f1 ) );
-            String linea1;
-            while(entrada1.ready()){
-                linea1 = entrada1.readLine();
-                System.out.println(linea1);
-                for (int x=0; x < linea1.length(); x++) {
-                    if (linea1.charAt(x) != ' '){
-                        sCadenaSinBlancos += linea1.charAt(x);
-                        i = inList.iterator();
-                        while(i.hasNext()){
-                            System.out.println(i.next());
-                            if(i.next().equals(sCadenaSinBlancos)){
-                                System.out.println("Son iguales");
-                            }    
-                        }
-                    }
-                }
-            System.out.println(sCadenaSinBlancos);
-            }
-        }catch (IOException e) {
-        e.printStackTrace();
-        }        
+        System.out.println(diccionario);   
+        System.out.println(diccionario.findName("come"));
+         
     }
     
     
